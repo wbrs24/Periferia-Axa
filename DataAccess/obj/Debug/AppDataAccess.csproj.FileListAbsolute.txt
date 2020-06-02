@@ -1,0 +1,15 @@
+C:\Projects\Periferia\AxaAssistance\DataAccess\obj\Debug\AppDataAccess.csprojAssemblyReference.cache
+C:\Projects\Periferia\AxaAssistance\DataAccess\obj\Debug\AppDataAccess.csproj.CoreCompileInputs.cache
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\DataAccess.dll
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\DataAccess.pdb
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\AutoMapper.dll
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\EntityFramework.dll
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\AutoMapper.pdb
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\AutoMapper.xml
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\EntityFramework.xml
+C:\Projects\Periferia\AxaAssistance\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Periferia\AxaAssistance\DataAccess\obj\Debug\AppDataAccess.csproj.CopyComplete
+C:\Projects\Periferia\AxaAssistance\DataAccess\obj\Debug\DataAccess.dll
+C:\Projects\Periferia\AxaAssistance\DataAccess\obj\Debug\DataAccess.pdb

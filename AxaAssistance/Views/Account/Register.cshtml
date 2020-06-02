@@ -1,0 +1,83 @@
+﻿@model DataAccess.Model.ViewModels.AccountViewModel.RegisterViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/css/Login.css">
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Register</h5>
+                    <form class="form-signin" id="registerForm" autocomplete="off">
+                        <div class="row">
+                            <div class="form-label-group col-md-6">
+                                <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
+                                <label for="inputName">Name</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-label-group col-md-6">
+                                <input type="text" id="inputSurename" class="form-control" placeholder="Surename" required>
+                                <label for="inputSurename">Surename</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-label-group col-md-6">
+                                <input type="number" id="inputIdNumber" class="form-control" placeholder="Identification Number" required>
+                                <label for="inputIdNumber">Identification Number</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-label-group col-md-6">
+                                <select id="inputIdType" class="form-control" required>
+                                    <option selected value="0">Identification Type</option>
+                                    <option value="1">CC</option>
+                                    <option value="2">TI</option>
+                                </select>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-label-group date col-md-6" data-provide="datepicker">
+                                <input type="text" class="form-control" id="inputBirthDate" placeholder="mm/dd/yyyy" required>
+                                <div class="input-group-addon">
+                                </div>
+                                <label for="inputBirthDate">Birth Date</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-label-group col-md-6">
+                                <input type="number" id="inputContacNumber" class="form-control" placeholder="Contact Number" required>
+                                <label for="inputContacNumber">Contact Number</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-label-group col-md-4">
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+                                <label for="inputEmail">Email</label>
+                            </div>
+                            <div class="form-label-group col-md-4">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                <label for="inputPassword">Password</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                            <div class="form-label-group col-md-4">
+                                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+                                <label for="inputConfirmPassword">Confirm Password</label>
+                                <span class="help-block" id="error"></span>
+                            </div>
+                        </div>
+                        <div class="text-center"><p id="msjError"></p></div>
+                        <button id="btnRegister" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/Scripts/account/Register.js"></script>
+}

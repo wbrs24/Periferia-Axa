@@ -1,0 +1,6 @@
+C:\Projects\Periferia\AxaAssistance\AppUtilities\bin\Debug\AppUtilities.dll
+C:\Projects\Periferia\AxaAssistance\AppUtilities\bin\Debug\AppUtilities.pdb
+C:\Projects\Periferia\AxaAssistance\AppUtilities\obj\Debug\AppUtilities.csprojAssemblyReference.cache
+C:\Projects\Periferia\AxaAssistance\AppUtilities\obj\Debug\AppUtilities.csproj.CoreCompileInputs.cache
+C:\Projects\Periferia\AxaAssistance\AppUtilities\obj\Debug\AppUtilities.dll
+C:\Projects\Periferia\AxaAssistance\AppUtilities\obj\Debug\AppUtilities.pdb

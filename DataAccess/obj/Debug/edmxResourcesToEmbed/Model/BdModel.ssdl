@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AxaTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="IdBill" />
+    </Key>
+    <Property Name="IdBill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCustomer" Type="int" Nullable="false" />
+    <Property Name="BillingDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BillDetail">
+    <Key>
+      <PropertyRef Name="IdBillDetail" />
+      <PropertyRef Name="IdBill" />
+      <PropertyRef Name="IdProduct" />
+    </Key>
+    <Property Name="IdBillDetail" Type="int" Nullable="false" />
+    <Property Name="IdBill" Type="int" Nullable="false" />
+    <Property Name="IdProduct" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="tinyint" Nullable="false" />
+    <Property Name="UnitPrice" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="IdCategory" />
+    </Key>
+    <Property Name="IdCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="state" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+    </Key>
+    <Property Name="IdProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="UnitPrice" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="tinyint" Nullable="false" />
+    <Property Name="State" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AxaTest.dbo.Product_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Product_Category">
+    <Key>
+      <PropertyRef Name="IdProduct" />
+      <PropertyRef Name="IdProductCategory" />
+    </Key>
+    <Property Name="IdProduct" Type="int" Nullable="false" />
+    <Property Name="IdProductCategory" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="State" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AxaTest.dbo.Rol_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Rol_User">
+    <Key>
+      <PropertyRef Name="IdRol" />
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdRol" Type="int" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdNumber" Type="int" Nullable="false" />
+    <Property Name="IdType" Type="tinyint" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SureName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BirthDate" Type="date" Nullable="false" />
+    <Property Name="ContactNumber" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="State" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bill_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillDetail_Bill">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+    <End Role="BillDetail" Type="Self.BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="IdBill" />
+      </Principal>
+      <Dependent Role="BillDetail">
+        <PropertyRef Name="IdBill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillDetail_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="BillDetail" Type="Self.BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="IdProduct" />
+      </Principal>
+      <Dependent Role="BillDetail">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="IdCategory" />
+      </Principal>
+      <Dependent Role="Product_Category">
+        <PropertyRef Name="IdProductCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Category" Type="Self.Product_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="IdProduct" />
+      </Principal>
+      <Dependent Role="Product_Category">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rol_User_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Rol_User" Type="Self.Rol_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="Rol_User">
+        <PropertyRef Name="IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rol_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Rol_User" Type="Self.Rol_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Rol_User">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AxaTestModelStoreContainer">
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BillDetail" EntityType="Self.BillDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_Category" EntityType="Self.Product_Category" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Product_Category].[IdProduct] AS [IdProduct], 
+    [Product_Category].[IdProductCategory] AS [IdProductCategory]
+    FROM [dbo].[Product_Category] AS [Product_Category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Rol_User" EntityType="Self.Rol_User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Rol_User].[IdRol] AS [IdRol], 
+    [Rol_User].[IdUser] AS [IdUser]
+    FROM [dbo].[Rol_User] AS [Rol_User]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Bill_User" Association="Self.FK_Bill_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillDetail_Bill" Association="Self.FK_BillDetail_Bill">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="BillDetail" EntitySet="BillDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillDetail_Product" Association="Self.FK_BillDetail_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="BillDetail" EntitySet="BillDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category_Category" Association="Self.FK_Product_Category_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product_Category" EntitySet="Product_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category_Product" Association="Self.FK_Product_Category_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Product_Category" EntitySet="Product_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rol_User_Rol" Association="Self.FK_Rol_User_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Rol_User" EntitySet="Rol_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rol_User_User" Association="Self.FK_Rol_User_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Rol_User" EntitySet="Rol_User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

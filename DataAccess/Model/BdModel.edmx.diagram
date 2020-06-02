@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfb0b00098e64955a64743ba0be9aa67" Name="Diagram1">
+        <EntityTypeShape EntityType="AxaTestModel.Bill" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AxaTestModel.BillDetail" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AxaTestModel.Category" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AxaTestModel.Product" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AxaTestModel.Rol" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AxaTestModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AxaTestModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="AxaTestModel.FK_Bill_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AxaTestModel.FK_BillDetail_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="AxaTestModel.FK_BillDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="AxaTestModel.Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="AxaTestModel.Rol_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

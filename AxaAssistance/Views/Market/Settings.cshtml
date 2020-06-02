@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/css/ModalForm.css">
+</head>
+<div class="row">
+    <div class="container">
+        <h1 class="mt-4">Products Settings</h1>
+        <div class="card mb-4">
+            <div class="card-header"><i class="fas fa-table mr-1"></i>Products</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div id="spinnerTable" class="spinner-border text-success hide" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <table class="table table-striped table-bordered" id="productsTable" width="100%" cellspacing="0">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal HTML Markup -->
+<div id="modalEC" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-modal" id="editForm" autocomplete="off">
+                    <div class="row">
+                        <input id="inputIdProduct" type="hidden" name="IdProduct" value="">
+                        <input id="inputCreatedBy" type="hidden" name="CreatedBy" value="">
+                        <div class="form-label-group col-md-6">
+                            <input type="text" id="inputName" name="Name" class="form-control" placeholder="Name" maxlength="19" required autofocus>
+                            <label for="inputName">Name</label>
+                        </div>
+                        <div class="form-label-group col-md-6">
+                            <input type="text" id="inputDescription" name="Description" class="form-control" placeholder="Description" maxlength="30" required>
+                            <label for="inputDescription">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-label-group col-md-4">
+                            <input type="number" id="inputPrice" name="Price" class="form-control" placeholder="Price" min="1" max="500" required>
+                            <label for="inputPrice">Price</label>
+                        </div>
+                        <div class="form-label-group col-md-4">
+                            <input type="number" id="inputQuantity" name="Quantity" class="form-control" placeholder="Price" min="1" max="10" required>
+                            <label for="inputQuantity">Quantity</label>
+                        </div>
+                        <div class="form-label-group col-md-4">
+                            <select id="inputState" name="State[]" class="form-control" required>
+                                <option value="default">State</option>
+                                <option value="Available">Available</option>
+                                <option value="Unvailable">Unavailable</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center"><p id="msjError"></p></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div id="spinner"class="spinner-border text-success hide" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-outline-dark btn-block" data-dismiss="modal">Close</button>
+                </div>
+                <div class="col-md-4">
+                    <button id="btnSaveEdit" class="btn btn-outline-success btn-block" type="button">Save Changes</button>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section Scripts {
+    <script src="~/Scripts/Market/Settings.js"></script>
+}

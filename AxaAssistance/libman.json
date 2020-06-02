@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@3.5.1",
+      "destination": "Scripts/jquery/"
+    },
+    {
+      "library": "bootstrap-datepicker@1.9.0",
+      "destination": "Scripts/bootstrap-datepicker/"
+    },
+    {
+      "library": "datatables@1.10.20",
+      "destination": "Scripts/datatables/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "datatables.net-editor@1.6.5",
+      "destination": "Scripts/datatables.net-editor/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "datatables.net-editor-bs4@1.6.3",
+      "destination": "Scripts/datatables.net-editor-bs4/"
+    }
+  ]
+}
