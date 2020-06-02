@@ -1,26 +1,36 @@
 # Periferia-Axa
 Proyecto proceso de ingreso Periferia - Axa.
+
 Aplicación MVC 5 - Tienda de Suculentas y Cactus.
+
 Qué encontrar?
 
 Home
+
 Módulo de Login
+
 Formulario de inisio de sesión
+
 Módulo de Registro
+
 Formulario para crear cuenta
+
 Modulo de Market (se requiere estar logueado para verlo)
+
 Espacio creado para observar los diferentes productos que hay en la tienda
+
+
 Módulo de Settings - Productos (se requiere ser administrador)
+
 Espacio para la administración de los productos (Crear, Modificar, Eliminar)
 
 Usarios
-Rol Aministrador
 
+Rol Aministrador
 
 cblanco@gmail.com - holaMundo
 
 Rol customer
-
 
 test@test.com - test123
 
