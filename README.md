@@ -2,13 +2,14 @@
 Proyecto proceso de ingreso Periferia - Axa.
 
 Aplicación MVC 5 - Tienda de Suculentas y Cactus.
+
 El proyecto fue construido con 4 capas, para separar los diferentes componentes de este (Datos, Servicios, Utilidades, MVC), además se implementó la inyección de dependencias.
 
 Qué encontrar?
 
 * Home
 
-* Módulo de Login - Formulario de inisio de sesión
+* Módulo de Login - Formulario de inicio de sesión
 
 * Módulo de Registro - Formulario para crear cuenta
 
